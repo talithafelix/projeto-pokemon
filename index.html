@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <title>Pokemons</title>
+</head>
+
+<body>
+    <header>
+        Pokemons
+        <img id="gif" src="" alt="pokemon aleatório">
+    </header>
+    <section class="pokemon hidden">
+        <img id="sprite" src="" alt="Sprite do Pokemon">
+        <div id="abilities"></div>
+
+        <div class="pokemonInfo">
+            <h1 id="name">Aqui o nome</h1>
+            <p id="height">Aqui altura</p>
+            <p id="weight">Aqui peso</p>
+        </div>
+    </section>
+
+    <section class="consulta">
+        <input type="text" name="pokemonName" id="pokemonName" placeholder="Digite o nome do pokemon">
+        <button id="buscar">Buscar</button>
+        <button id="aleatorio">Aleatório</button>
+    </section>
+
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
