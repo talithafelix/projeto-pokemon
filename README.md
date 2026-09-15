@@ -76,7 +76,7 @@ Contribuições, sugestões e feedbacks são bem-vindos!
 
 1. Clone este repositório:
    ```bash
-   git clone <https://github.com/talithafelix/projeto-pokemon/tree/V2>
+   git clone https://github.com/talithafelix/projeto-pokemon/tree/V2
    ```
 2. Abra o arquivo `index.html` em um navegador (recomenda-se usar uma extensão como o **Live Server** do VS Code, já que o projeto usa módulos JavaScript e faz requisições a uma API externa).
 3. Para acessar a lista de Pokémons, clique no botão **"Lista de pokemons"** na página inicial ou abra diretamente o `pokemons.html`.
