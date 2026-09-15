@@ -18,16 +18,31 @@ async function getPokemon() {
         }
     });
 
-    const data = await response.json();
+    
     const pokemonContainer = document.querySelector(".pokemon");
 
-    if (pokemonContainer.classList.contains("hidden")) {
-        pokemonContainer.classList.remove("hidden");
+    if (!response.ok) {
+
+        pokemonContainer.classList.add("hidden");
+        window.alert("Pokemon não encontrado!!");
+        return;
+
     }
 
-    document.querySelector("#height").innerHTML = `Altura: ${data.height} m`;
-    document.querySelector("#weight").innerHTML = `Peso: ${data.weight} kg`;
-    document.querySelector("#name").innerHTML = `Nome: ${capitalizeFirstLetter(data.name)}`;
+    const data = await response.json();
+
+        document.querySelector("#height").innerHTML = `Altura: ${data.height} m`;
+        document.querySelector("#weight").innerHTML = `Peso: ${data.weight} kg`;
+        document.querySelector("#name").innerHTML = `Nome: ${capitalizeFirstLetter(data.name)}`;
+
+
+        pokemonContainer.classList.remove("hidden");
+
+    /*
+        if (pokemonContainer.classList.contains("hidden")) {
+            pokemonContainer.classList.remove("hidden");
+        }
+    */
 
     let imagem = await getPokemonImage(data.id);
 
@@ -94,7 +109,7 @@ async function aleatorio(retorno = "nome ou id") {
 async function gif() {
     let id = await aleatorio("id");
     //let id = 99;
-    let imagem = await getPokemonImage(id)
+    let imagem = await getPokemonImage(id);
     if (!imagem) {
         imagens.src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png";
     } else {
