@@ -103,6 +103,18 @@ button {
     font-family: "Pixelify Sans", sans-serif;
 }
 
+.botao-link {
+    display: inline-block;
+    padding: 1px 6px;
+    background-color: var(--cor-1);
+    color: white;
+    border-radius: 10px;
+    border-style: outset;
+    box-shadow: 5px 5px 8px 2px rgb(0 0 0 / 17%);
+    font: inherit;
+    text-decoration: none;
+}
+
 input {
     font-family: "Pixelify Sans", sans-serif;
     border-radius: 10px;
