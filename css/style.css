@@ -98,7 +98,6 @@ button {
     background-color: var(--cor-1);
     color: white;
     border-radius: 10px;
-    /*box-shadow: 1px 2px 2px 2px rrgba(0, 0, 0, 0.664);*/
     box-shadow: 5px 5px 8px 2px rgb(0 0 0 / 17%);
     font-family: "Pixelify Sans", sans-serif;
 }
@@ -118,4 +117,21 @@ button {
 input {
     font-family: "Pixelify Sans", sans-serif;
     border-radius: 10px;
+}
+
+/*Pokemons.html*/
+
+.pokemon-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap:.8rem;
+    align-items: flex-start;
+    
+}
+
+.card {
+    margin:10px;
+    background-color: var(--cor-3);
+    border-radius: 20px;
+    box-shadow: 5px 5px 8px 2px rgb(0 0 0 / 17%);
 }
