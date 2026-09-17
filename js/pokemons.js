@@ -1,8 +1,8 @@
 //import { getPokemonImage } from "./index.js";
 
 async function carregaListaPokemons() {
-
-    for (var i = 1; i <= 300; i++) {
+    //voltar para <=300 após fazer a paginação
+    for (var i = 1; i <= 10; i++) {
 
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`, {
             method: 'GET',
@@ -24,6 +24,7 @@ async function carregaListaPokemons() {
                 <p id="height">Altura: ${data.height} m</p>
                 <p id="weight">Peso: ${data.weight} kg</p>
             </div>
+
         </section>`;
 
        // await getPokemonImage(data.id);

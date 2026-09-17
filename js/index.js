@@ -18,7 +18,6 @@ async function getPokemon() {
         }
     });
 
-    
     const pokemonContainer = document.querySelector(".pokemon");
 
     if (!response.ok) {
@@ -38,12 +37,6 @@ async function getPokemon() {
 
         pokemonContainer.classList.remove("hidden");
 
-    /*
-        if (pokemonContainer.classList.contains("hidden")) {
-            pokemonContainer.classList.remove("hidden");
-        }
-    */
-
     let imagem = await getPokemonImage(data.id);
 
     if (!imagem) {
@@ -51,8 +44,6 @@ async function getPokemon() {
     } else {
         document.querySelector("#sprite").src = imagem;
     }
-
-
 
     // Display abilities
     const abilitiesContainer = document.querySelector("#abilities");
@@ -94,6 +85,9 @@ async function aleatorio(retorno = "nome ou id") {
     const url = dados.results[indice].url;
     const pokemonSorteado = dados.results[indice].name;
     const pokemonId = url.split("/").filter(Boolean).pop();
+    //split: divide a string em um array de substrings com base no delimitador fornecido (neste caso, "/").
+    //filter(Boolean): remove quaisquer elementos falsy do array resultante (como strings vazias).
+    //pop(): retorna o último elemento do array filtrado, que é o ID do Pokémon.     
 
 
     if (retorno == "nome") {
@@ -106,6 +100,7 @@ async function aleatorio(retorno = "nome ou id") {
 
 }
 
+// Busca um Pokémon aleatório e atualiza a imagem
 async function gif() {
     let id = await aleatorio("id");
     //let id = 99;
@@ -118,6 +113,7 @@ async function gif() {
 }
 
 // Função responsável por trocar a imagem continuamente
+// Controla o loop e o tempo de atualização
 async function iniciarGif() {
 
     // Loop infinito: ficará executando até a página ser fechada
@@ -143,7 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Pokemon API Example
 btnBuscar.onclick = async function () {
     await getPokemon();
 }
